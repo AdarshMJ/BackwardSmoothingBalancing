@@ -2,7 +2,7 @@
 
 
 
-![Balanced](https://github.com/AdarshMJ/BackwardSmoothingBalancing/blob/main/h0.00-r1_40L_5.0bal_5.0Ortho.pdf)
+![h0.00-r1_40L_5.0bal_5.0Ortho](https://github.com/AdarshMJ/BackwardSmoothingBalancing/blob/main/h0.00-r1_40L_5.0bal_5.0Ortho.pdf)
 
 
 
