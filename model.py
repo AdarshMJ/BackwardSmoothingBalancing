@@ -73,23 +73,14 @@ class NodeGCN(torch.nn.Module):
             def hook_fn(grad, k_idx=i): # Use default arg to capture k_idx at definition time
                 # print(f"Hook called for H({k_idx}), grad shape: {grad.shape if grad is not None else 'None'}")
                 if grad is not None:
-                    # Ensure list is long enough (backward pass populates in reverse order of registration)
-                    # This is tricky. Hooks fire in reverse order of tensor creation in fwd pass.
-                    # A simpler way: store in a dict keyed by layer index or append and then sort/reverse.
-                    # For now, let's append and assume they will be in some order, then sort later if needed.
                     backward_gradients_H.append(grad.clone().detach()) 
                 else:
-                    backward_gradients_H.append(None) # Placeholder if no grad (e.g. not in graph path)
+                    backward_gradients_H.append(None) 
 
 
             # h_k.register_hook(hook_fn) 
             # The above hook is on the gradient of h_k *itself* which is dL/dh_k.
             # This is what we want: B(k) = dL/dH(k)
-
-            # It's often easier to register hooks on module outputs if that's where H(k) is defined.
-            # However, GCNConv output *is* H(k).
-            # Let's try a different approach for appending to maintain order.
-            # We will populate backward_gradients_H in reverse order and then reverse it.
             
             # --- Activation and next X ---
             if i < len(self.convs) - 1: # Not the last GCN layer
@@ -131,10 +122,6 @@ class NodeGCN(torch.nn.Module):
         for conv in self.convs:
             conv.reset_parameters()
 
-# Similar modifications would be needed for NodeGAT and NodeGraphConv
-# to call retain_grad() on their pre-activation outputs H(k)
-# and then access h_k.grad after loss.backward().
-# The hook approach can be fiddly with order. Direct .grad access after retain_grad() is often cleaner.
 class NodeGAT(torch.nn.Module): # Simplified example, focusing on retain_grad
     def __init__(self, num_features, num_classes, hidden_channels, num_layers, heads=4):
         super().__init__()
