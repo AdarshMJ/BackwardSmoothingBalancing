@@ -10,7 +10,7 @@
 
 ## TL;DR of the paper
 
-1. New paper [Backward Oversmoothing: why is it hard to train deep Graph Neural Networks?](https://arxiv.org/abs/2505.16736) explores why it is hard to train deeper GNNs from an optimization perspective.
+1. [Backward Oversmoothing: why is it hard to train deep Graph Neural Networks?](https://arxiv.org/abs/2505.16736) explores why it is hard to train deeper GNNs from an optimization perspective.
 2. Over-smoothing is a well-known phenomenon in GNNs, where node features become indistinguishable as the number of layers/rounds of aggregation increases if the weights of the model are bounded. If the weights are sufficiently large, then the GNN should not over-smooth. But this doesnt happen in practice.
 3. This is because of "backward oversmoothing", that is, the errors that are propagated during gradient descent might also be subject to over-smoothing.
 
