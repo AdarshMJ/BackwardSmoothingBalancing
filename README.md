@@ -2,7 +2,7 @@
 
 
 
-![balancedbackward](https://github.com/AdarshMJ/BackwardSmoothingBalancing/main/balancedbackward.png)
+![balancedbackward](https://github.com/AdarshMJ/BackwardSmoothingBalancing/blob/main/balancedbackward.jpg)
 
 
 
