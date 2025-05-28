@@ -1,5 +1,13 @@
 # BackwardSmoothingBalancing
 
+
+
+![Balanced](https://github.com/AdarshMJ/SpectralPruningBraess/blob/main/BraessRing.jpg)
+
+
+
+
+
 ## TL;DR of the paper
 
 1. New paper [Backward Oversmoothing: why is it hard to train deep Graph Neural Networks?](https://arxiv.org/abs/2505.16736) explores why it is hard to train deeper GNNs from an optimization perspective.
