@@ -9,4 +9,23 @@
 ## My hypothesis 
 1. Find better way to initialize the GNN model weights. This work for instance - [Are GATs Out of Balance?](https://arxiv.org/pdf/2310.07235) proposes a way to initialize the model weights (balanced+orthogonal initialization).
 2. By initializing the weights in balance, we can mitigate backward smoothing! Since balancing the weights lead to effective gradient flow and thus curbs grandient vanishing consequently tackling backward oversmoothing.
+
+## How to use the code
+### Pre-requisities
+```Python
+1. Pytorch
+2. Pytorch-Geometric
+```
+### Dataset
+We use the synthetic-cora dataset proposed in [Beyond Homophily in Graph Neural Networks:
+Current Limitations and Effective Designs](https://arxiv.org/pdf/2006.11468), we provide 5 datasets with varying levels of homophily level.
+
+### Run Code
+```python
+python backwardsmoothing.py
+```
+
+
+
+
    
