@@ -16,7 +16,7 @@
 
 ## My hypothesis 
 1. Find better way to initialize the GNN model weights. This work for instance - [Are GATs Out of Balance?](https://arxiv.org/pdf/2310.07235) proposes a way to initialize the model weights (balanced+orthogonal initialization).
-2. By initializing the weights in balance, we can mitigate backward smoothing! Since balancing the weights lead to effective gradient flow and thus curbs grandient vanishing consequently tackling backward oversmoothing.
+2. By initializing the weights in balance, we can mitigate backward smoothing! Since balancing the weights lead to effective gradient flow and thus curbs gradient vanishing consequently tackling backward oversmoothing.
 
 ## How to use the code
 ### Pre-requisities
